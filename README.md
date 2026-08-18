@@ -23,6 +23,13 @@ Projeto de estudo de web scraping e unificação de dados em Python.
    - Ao final, imprime quantas linhas não encontraram correspondência no
      estoque (títulos cadastrados de forma diferente entre os dois sistemas)
 
+3. **Análise exploratória** (`eda.py`) — analisa `dados/repositorio_unificado.csv`:
+   - Imprime no terminal o resumo estatístico (`describe()`) da coluna
+     `preco_brl` e a correlação entre `preco_brl` e `avaliacao`
+   - Gera e salva em `graficos/` três imagens: histograma da distribuição
+     de preços, gráfico de barras com a quantidade de livros por avaliação
+     (1 a 5 estrelas) e gráfico de dispersão entre preço e avaliação
+
 ## Estrutura dos dados
 
 | Arquivo | Origem | Conteúdo |
@@ -30,6 +37,7 @@ Projeto de estudo de web scraping e unificação de dados em Python.
 | `dados/livros.csv` | `coletor.py` | título, preço, avaliação, disponível |
 | `dados/estoque-livraria.xlsx` | fictício | título, estoque |
 | `dados/repositorio_unificado.csv` | `unificar.py` | título, preço, avaliação, disponível, preco_brl, estoque |
+| `graficos/*.png` | `eda.py` | histograma de preços, barras por avaliação, dispersão preço x avaliação |
 
 ## Como executar
 
@@ -51,4 +59,5 @@ pip install -r requirements.txt
 ```bash
 python coletor.py
 python unificar.py
+python eda.py
 ```
