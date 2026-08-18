@@ -30,6 +30,17 @@ Projeto de estudo de web scraping e unificação de dados em Python.
      de preços, gráfico de barras com a quantidade de livros por avaliação
      (1 a 5 estrelas) e gráfico de dispersão entre preço e avaliação
 
+4. **Modelo de classificação** (`modelo.py`) — treina uma Regressão
+   Logística (scikit-learn) para prever `bem_avaliado` (avaliação >= 4)
+   a partir de `preco_brl` e da coluna `disponivel` (one-hot encoding).
+   Imprime a acurácia e a matriz de confusão no teste (20% dos dados).
+   > **Limitação conhecida**: `disponivel` é `True` para todos os livros
+   > coletados, então essa feature não carrega informação nenhuma, e
+   > `preco_brl` tem correlação quase nula com a avaliação (ver EDA). O
+   > modelo atual apenas prevê a classe majoritária. Para um modelo com
+   > sinal real, seria necessário extrair a categoria/gênero verdadeiro
+   > do livro no scraping (`coletor.py`) e usá-la como feature.
+
 ## Estrutura dos dados
 
 | Arquivo | Origem | Conteúdo |
@@ -60,4 +71,5 @@ pip install -r requirements.txt
 python coletor.py
 python unificar.py
 python eda.py
+python modelo.py
 ```
