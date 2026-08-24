@@ -41,6 +41,12 @@ Projeto de estudo de web scraping e unificação de dados em Python.
    > sinal real, seria necessário extrair a categoria/gênero verdadeiro
    > do livro no scraping (`coletor.py`) e usá-la como feature.
 
+5. **Painel interativo** (`painel.py`) — dashboard em Streamlit sobre
+   `dados/repositorio_unificado.csv`, com filtros na barra lateral
+   (categoria/avaliação e faixa de preço), cartões de métrica (quantidade
+   de livros, preço médio, avaliação média), gráfico de barras de livros
+   por categoria e tabela com os dados filtrados.
+
 ## Estrutura dos dados
 
 | Arquivo | Origem | Conteúdo |
@@ -72,4 +78,5 @@ python coletor.py
 python unificar.py
 python eda.py
 python modelo.py
+streamlit run painel.py
 ```
